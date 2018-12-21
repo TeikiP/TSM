@@ -1,0 +1,16 @@
+CC=gcc
+CFLAGS=-Wall
+LDFLAGS=-lm
+MAINPROG=-o ExecSound
+MAINFILE=son_a_completer
+
+
+default:
+	$(CC) -c gnuplot_i.c
+	$(CC) -c $(MAINFILE).c
+	$(CC) $(CFLAGS) gnuplot_i.o $(MAINFILE).o $(LDFLAGS) $(MAINPROG)
+
+.PHONY: clean
+
+clean:
+	rm -f *.o *~
